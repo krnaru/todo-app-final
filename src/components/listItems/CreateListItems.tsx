@@ -50,7 +50,7 @@ const CreateListItems: React.FC<CreateListItemsProps> = ({ version, token, onCre
         />
       </div>
       <div className={styles["input-group"]}>
-        <label htmlFor="listItemCompleted" className={styles['checkbox-label']}>
+        <label className={styles['checkbox-label']}>
           <input
             type="checkbox"
             id="listItemCompleted"
