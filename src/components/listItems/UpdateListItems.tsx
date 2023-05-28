@@ -56,10 +56,9 @@ const UpdateListItems: React.FC<UpdateListItemsProps> = ({
           </label>
         </div>
         <div className={styles["input-group"]}>
-        <label htmlFor="listItemCompleted" className={styles['checkbox-label']}>
+        <label className={styles['checkbox-label']}>
           <input
             type="checkbox"
-            id="listItemCompleted"
             className={styles['checkbox-input']}
             checked={completed} // for checkbox it's better to use checked instead of value
             onChange={(e) => setListItemCompleted(e.target.checked)} // we set it based on the checked property, not value
