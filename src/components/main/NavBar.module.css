@@ -1,0 +1,48 @@
+/* src/components/NavBar.module.css */
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #333;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks a {
+  margin-right: 1em;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.navLinks a:hover {
+  color: #ddd;
+}
+
+.navLinks button {
+  padding: 10px 20px;
+  margin-left: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navLinks button:hover {
+  background-color: #555;
+}
