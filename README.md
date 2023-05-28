@@ -1,3 +1,19 @@
+# Running BUILD locally
+
+## Prequisities
+- Need to have Docker installed.
+
+## Build docker image:
+- first, open a command prompt or terminal in the root directory
+- run the following command: `docker build -t todo-react-app .`
+
+## Run docker container:
+- Once image is built, run the following command: `docker run -p 80:80 todo-react-app`
+
+If all was successful, the application should be running at `http://localhost/`
+
+# NPM commands for local development:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,4 +60,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-# todo-app-final

@@ -21,7 +21,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, onSwitchToRegister }) => {
       setError(null);
     } catch (err) {
       if (err instanceof Error) {
-        setError(err.message);
+        setError('Login failed. Please check your email and password.');
       }
     }
   };

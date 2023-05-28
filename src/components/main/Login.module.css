@@ -50,3 +50,13 @@
     margin-top: 0.5rem;
   }
   
+  .listContainer {
+    margin-top: -7px;
+  }
+
+  .listItem {
+    color: #444;
+    font-size: 0.8em;
+    margin-left: -30px;
+  }
+  
