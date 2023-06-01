@@ -32,13 +32,13 @@ const DetailTodoTask: React.FC<DetailTodoTasksProps> = ({ token, taskId, version
           <p>ID: {task.id}</p>
           <p>Name: {task.taskName}</p>
           <p>Sort: {task.taskSort}</p>
-          <p>Task created at: <Moment format="DD/MM/YYYY HH:MM" date={task.createdDt}/></p>
+          <p>Task created at: <Moment format="DD/MM/YYYY" date={task.createdDt}/></p>
           <p>Task due at: <Moment format="DD/MM/YYYY" date={task.dueDt}/></p>
           <p>Completed: {task.isCompleted ? '✔️' : '❌'}</p>
           <p>Archived: {task.isArchived ? '✔️' : '❌'}</p>
           <p>Category id: {task.todoCategoryId}</p>
           <p>Priority id: {task.todoPriorityId}</p>
-          <p>Sync Date: <Moment format="DD/MM/YYYY HH:MM" date={task.syncDt}/></p>
+          <p>Sync Date: <Moment format="DD/MM/YYYY" date={task.syncDt}/></p>
         </div>
       ) : (
         <p>Loading...</p>

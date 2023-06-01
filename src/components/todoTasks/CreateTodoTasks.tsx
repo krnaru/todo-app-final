@@ -40,8 +40,7 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!taskName || !taskSort || !dueDate) {
-      if(selectedCategoryId.trim() === "" || selectedPriorityId.trim() === "")
+    if (!taskName || !taskSort || !taskSort ) {
       setError('All fields are required.');
       return;
     }
@@ -117,7 +116,7 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
       </div>
         <div className={styles["input-group"]}>
         <label htmlFor="taskSort">Task Due date:</label>
-        <input type="date" id="start" value={dueDate} onChange={(e) => setDueDate(e.target.value == null ? '' : e.target.value)} name="trip-start"></input>
+        <input type="date" id="start" value={dueDate} onChange={(e) => setDueDate(e.target.value)} name="trip-start"></input>
       </div>
       <div className={styles["input-group"]}>
         <label htmlFor="taskCategory">Task Category:</label>
