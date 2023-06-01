@@ -13,11 +13,12 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
   const [taskSort, setTaskSort] = useState('');
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
   const [isArchived, setIsArchived] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+  const [dueDate, setDueDate] = useState('');
   const [categories, setCategories] = useState<TodoCategory[]>([]);
   const [priorities, setPriorities] = useState<TodoPriority[]>([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>('');
   const [selectedPriorityId, setSelectedPriorityId] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchCategoriesAndPriorities = async () => {
@@ -39,7 +40,8 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!taskName || !taskSort) {
+    if (!taskName || !taskSort || !dueDate) {
+      if(selectedCategoryId.trim() === "" || selectedPriorityId.trim() === "")
       setError('All fields are required.');
       return;
     }
@@ -50,6 +52,7 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
         taskSort: Number(taskSort),
         todoCategoryId: selectedCategoryId,
         todoPriorityId: selectedPriorityId,
+        dueDt: dueDate,
         isCompleted,
         isArchived,
       };
@@ -92,8 +95,8 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
             type="checkbox"
             id="isCompleted"
             className={styles['checkbox-input']}
-            checked={isCompleted} // for checkbox it's better to use checked instead of value
-            onChange={(e) => setIsCompleted(e.target.checked)} // we set it based on the checked property, not value
+            checked={isCompleted}
+            onChange={(e) => setIsCompleted(e.target.checked)}
           />
           <span className={styles['checkbox-checkmark']}></span>
           Is Task completed?
@@ -105,12 +108,16 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
             type="checkbox"
             id="isArchived"
             className={styles['checkbox-input']}
-            checked={isArchived} // for checkbox it's better to use checked instead of value
-            onChange={(e) => setIsArchived(e.target.checked)} // we set it based on the checked property, not value
+            checked={isArchived}
+            onChange={(e) => setIsArchived(e.target.checked)}
           />
           <span className={styles['checkbox-checkmark']}></span>
           Is Task archived?
         </label>
+      </div>
+        <div className={styles["input-group"]}>
+        <label htmlFor="taskSort">Task Due date:</label>
+        <input type="date" id="start" value={dueDate} onChange={(e) => setDueDate(e.target.value == null ? '' : e.target.value)} name="trip-start"></input>
       </div>
       <div className={styles["input-group"]}>
         <label htmlFor="taskCategory">Task Category:</label>

@@ -31,8 +31,8 @@ export interface TodoTask {
   id: string;
   taskName:	string;
   taskSort:	number;
-  createdDt:	Date;
-  dueDt:	Date;
+  createdDt:	string;
+  dueDt:	string;
   isCompleted:	boolean;
   isArchived:	boolean;
   todoCategoryId:	string;
@@ -248,6 +248,7 @@ export const fetchTodoTasksById = async (token: string, id: string, version: str
 };
 
 export const updateTodoTasks = async (token: string, id: string, version: string, data: Partial<TodoTask>): Promise<void> => {
+  console.log(data);
   await axios.put(`${API_BASE_URL}${getAPIVersionPath(version)}/TodoTasks/${data.id}`, data,  { headers: { Authorization: `Bearer ${token}` } });
 };
 
