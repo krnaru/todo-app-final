@@ -28,7 +28,6 @@ const DetailListItems: React.FC<DetailListItemsProps> = ({ token, listItemId, ve
       {listItem ? (
         <div>
           <h2>Category Details</h2>
-          <p>ID: {listItem.id}</p>
           <p>Description: {listItem.description}</p>
           <p>Completed: {listItem.completed ? '✔️' : '❌'}</p>
         </div>
