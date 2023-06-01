@@ -27,6 +27,8 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
         const fetchedPriorities = await fetchTodoPriorities(token, version);
         setCategories(fetchedCategories);
         setPriorities(fetchedPriorities);
+        if (fetchedCategories.length > 0) setSelectedCategoryId(fetchedCategories[0].id);
+        if (fetchedPriorities.length > 0) setSelectedPriorityId(fetchedPriorities[0].id);
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
@@ -40,7 +42,7 @@ const CreateTodoTask: React.FC<CreateTodoTasksProps> = ({ version, token, onCrea
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!taskName || !taskSort || !taskSort ) {
+    if (!taskName || !taskSort || !dueDate) {
       setError('All fields are required.');
       return;
     }
