@@ -60,8 +60,8 @@ const UpdateListItems: React.FC<UpdateListItemsProps> = ({
           <input
             type="checkbox"
             className={styles['checkbox-input']}
-            checked={completed} // for checkbox it's better to use checked instead of value
-            onChange={(e) => setListItemCompleted(e.target.checked)} // we set it based on the checked property, not value
+            checked={completed}
+            onChange={(e) => setListItemCompleted(e.target.checked)}
           />
           <span className={styles['checkbox-checkmark']}></span>
           Item completed?

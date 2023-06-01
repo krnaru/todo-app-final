@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListItem, TodoCategory } from '../../api/api';
+import { ListItem } from '../../api/api';
 
 interface ReadListItemsProps {
   listItem: ListItem;

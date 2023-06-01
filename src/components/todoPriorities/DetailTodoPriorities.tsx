@@ -27,7 +27,6 @@ const DetailTodoPriority: React.FC<DetailTodoPrioritiesProps> = ({ token, priori
       {priority ? (
         <div>
           <h2>Priority Details</h2>
-          <p>ID: {priority.id}</p>
           <p>Name: {priority.priorityName}</p>
           <p>Sort: {priority.prioritySort}</p>
           <p>Sync Date: <Moment format="DD/MM/YYYY HH:MM" date={priority.syncDt}/></p>

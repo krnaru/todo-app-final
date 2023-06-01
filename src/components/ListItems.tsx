@@ -23,7 +23,6 @@ const ListItems: React.FC<ListItemsProps> = ({ token }) => {
   useEffect(() => {
     (async () => {
       try {
-        //TODO: remove false, get option from frontend
         const data = await fetchListItems(token, version);
         setListItems(data);
         setError(null);

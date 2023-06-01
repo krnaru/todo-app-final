@@ -29,7 +29,6 @@ const DetailTodoCategory: React.FC<DetailTodoCategoryProps> = ({ token, category
       {category ? (
         <div>
           <h2>Category Details</h2>
-          <p>ID: {category.id}</p>
           <p>Name: {category.categoryName}</p>
           <p>Sort: {category.categorySort}</p>
           <p>Sync Date: <Moment format="DD/MM/YYYY HH:MM" date={category.syncDt}/></p>
