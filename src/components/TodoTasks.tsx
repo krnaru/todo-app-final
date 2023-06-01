@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { fetchTodoTasks, TodoTask } from '../api/api';
 import styles from './styles/componentStyles.module.css';
 import buttonStyle from '../styles/App.module.css' 
-import DetailTodoCategory from './todoCategories/DetailTodoCategory';
 import CreateTodoTasks from './todoTasks/CreateTodoTasks';
 import ReadTodoTasks from './todoTasks/ReadTodoTasks';
 import UpdateTodoTasks from './todoTasks/UpdateTodoTasks';
@@ -70,7 +69,7 @@ const TodoTasks: React.FC<TodoTasksProps> = ({ token }) => {
               version={version}
               token={token}
               onDelete={() => {
-                setTasks(tasks.filter((task) => task.id !== task.id));
+                setTasks(tasks.filter((tsk) => tsk.id !== task.id));
               }}
             />
             <button className={buttonStyle.button} onClick={() => setShowDetails({ taskId: task.id })}>Details</button>
