@@ -34,6 +34,7 @@ const DetailTodoTask: React.FC<DetailTodoTasksProps> = ({ token, taskId, version
   useEffect(() => {
     const fetchCategoriesAndPriorities = async () => {
       try {
+        let taskCategory, taskPriority;
         if(task?.todoCategoryId != null) {
           taskCategory = await fetchTodoCategoryById(token, task?.todoCategoryId!, version);
         }
